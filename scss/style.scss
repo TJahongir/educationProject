@@ -134,6 +134,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 3rem 4rem;
+  background: rgba($color: #000000, $alpha: 0.2);
 
   ul {
     display: flex;
@@ -176,6 +183,18 @@ nav {
       text-transform: uppercase;
       font-weight: bold;
       margin-left: 1rem;
+    }
+  }
+
+  .burger {
+    cursor: pointer;
+    display: none;
+    transition: transform 0.5s ease-in;
+    div {
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      margin: 5px;
     }
   }
 }
@@ -365,7 +384,7 @@ nav {
     .profile {
       width: 96px;
       height: 96px;
-
+      border-radius: 50%;
       background-color: #fff;
 
       img {
@@ -611,7 +630,7 @@ nav {
   padding: 3rem 0;
 }
 
-@-webkit-keyframes autofill {
+@keyframes autofill {
   to {
     color: #666;
     background: transparent;

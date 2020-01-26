@@ -3,8 +3,36 @@
     padding: 3rem 0;
   }
 
-  nav {
+  .hide {
     display: none;
+  }
+
+  nav {
+    height: 8vh;
+    background: rgba($color: #000000, $alpha: 0.8);
+    .ul {
+      position: absolute;
+      background-color: rgba($color: #000000, $alpha: 0.8);
+      flex-direction: column;
+      justify-content: space-around;
+      top: 8vh;
+      right: 0;
+      width: 50%;
+      height: 92vh;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+
+      li {
+        margin-left: 0;
+      }
+    }
+    .nav-active {
+      transform: translateX(0);
+    }
+
+    .burger {
+      display: block;
+    }
   }
   .container {
     width: 90%;
@@ -36,6 +64,11 @@
       .education__right {
         margin-top: 2rem;
         padding-left: 0;
+        text-align: center;
+
+        &-bottom {
+          text-align: left;
+        }
       }
     }
   }
@@ -180,5 +213,28 @@
 
   .footer {
     display: none;
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .one {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .two {
+    opacity: 0;
+  }
+
+  .toggle .three {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 }
